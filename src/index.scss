@@ -1,0 +1,11 @@
+@import '~normalize.css';
+
+@import '~react-md/src/scss/react-md';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+
+$md-primary-color: $md-teal-500;
+$md-secondary-color: $md-lime-a-400;
+
+@include react-md-everything;
