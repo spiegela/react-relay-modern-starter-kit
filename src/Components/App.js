@@ -10,7 +10,7 @@ export default class App extends Component {
   render() {
     return(
         <Layout viewer={this.props.viewer}>
-          <WidgetList viewer={this.props.viewer}/>
+          {this.props.children}
         </Layout>
       );
   }
