@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 3f7b4647f5d2f3e31dea71fecf34b416
+ * @relayHash 065c35f3034130bb6f2859e5f7b8a28e
  */
 
 /* eslint-disable */
@@ -9,14 +9,14 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type AppQueryResponse = {|
+export type routes_App_QueryResponse = {|
   +viewer: ?{| |};
 |};
 */
 
 
 /*
-query AppQuery {
+query routes_App_Query {
   viewer {
     ...Layout_viewer
     ...WidgetList_viewer
@@ -42,8 +42,6 @@ fragment WidgetList_viewer on User {
     pageInfo {
       endCursor
       hasNextPage
-      hasPreviousPage
-      startCursor
     }
   }
 }
@@ -54,7 +52,7 @@ const batch /*: ConcreteBatch*/ = {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "AppQuery",
+    "name": "routes_App_Query",
     "selections": [
       {
         "kind": "LinkedField",
@@ -83,11 +81,11 @@ const batch /*: ConcreteBatch*/ = {
   "id": null,
   "kind": "Batch",
   "metadata": {},
-  "name": "AppQuery",
+  "name": "routes_App_Query",
   "query": {
     "argumentDefinitions": [],
     "kind": "Root",
-    "name": "AppQuery",
+    "name": "routes_App_Query",
     "operation": "query",
     "selections": [
       {
@@ -198,20 +196,6 @@ const batch /*: ConcreteBatch*/ = {
                     "args": null,
                     "name": "hasNextPage",
                     "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "hasPreviousPage",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "startCursor",
-                    "storageKey": null
                   }
                 ],
                 "storageKey": null
@@ -240,7 +224,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppQuery {\n  viewer {\n    ...Layout_viewer\n    ...WidgetList_viewer\n    id\n  }\n}\n\nfragment Layout_viewer on User {\n  id\n  name\n}\n\nfragment WidgetList_viewer on User {\n  widgets(first: 3) {\n    edges {\n      node {\n        id\n        name\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n"
+  "text": "query routes_App_Query {\n  viewer {\n    ...Layout_viewer\n    ...WidgetList_viewer\n    id\n  }\n}\n\nfragment Layout_viewer on User {\n  id\n  name\n}\n\nfragment WidgetList_viewer on User {\n  widgets(first: 3) {\n    edges {\n      node {\n        id\n        name\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
 };
 
 module.exports = batch;

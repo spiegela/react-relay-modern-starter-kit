@@ -75,8 +75,47 @@ const fragment /*: ConcreteFragment*/ = {
                   "args": null,
                   "name": "name",
                   "storageKey": null
+                },
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "args": null,
+                  "name": "__typename",
+                  "storageKey": null
                 }
               ],
+              "storageKey": null
+            },
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "args": null,
+              "name": "cursor",
+              "storageKey": null
+            }
+          ],
+          "storageKey": null
+        },
+        {
+          "kind": "LinkedField",
+          "alias": null,
+          "args": null,
+          "concreteType": "PageInfo",
+          "name": "pageInfo",
+          "plural": false,
+          "selections": [
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "args": null,
+              "name": "endCursor",
+              "storageKey": null
+            },
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "args": null,
+              "name": "hasNextPage",
               "storageKey": null
             }
           ],

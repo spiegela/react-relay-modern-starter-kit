@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 
-import App from './Components/App'
-
 import styles from './index.scss'
+import Router from './Router'
 
 const render = Component => {
   ReactDOM.render(
@@ -15,8 +14,8 @@ const render = Component => {
   )
 }
 
-render(App)
+render(Router)
 
 if (module.hot) {
-  module.hot.accept('./Components/App', () => { render(App) })
+  module.hot.accept('./Router', () => { render(Router) })
 }

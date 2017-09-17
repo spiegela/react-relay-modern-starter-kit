@@ -20,6 +20,7 @@
   },
   "homepage": "git+https://github.com/spiegela/react-relay-modern-starter-kit.git",
   "dependencies": {
+    "found": "^0.3.4",
     "found-relay": "next",
     "graphql-relay": "^0.5.2",
     "node-sass": "^4.5.3",
