@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   devtool: 'source-map',
@@ -10,6 +11,10 @@ module.exports = {
       './src/index'
     ]
   },
+  plugins: [
+    new Dotenv({path: './.env'})
+  ],
+  devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
     port: 3000,

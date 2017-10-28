@@ -1,17 +1,29 @@
 import React, {Component} from 'react'
-import {
-  graphql,
-  QueryRenderer
-} from 'react-relay'
+import withRouter from 'found/lib/withRouter'
 import Layout from './Layout'
-import WidgetList from './WidgetList'
 
-export default class App extends Component {
+class App extends Component {
+
+  componentWillMount() {
+    this.props.route.auth.on('logged_in', this.redirectToRoot.bind(this))
+  }
+
+  redirectToRoot() {
+    this.props.router.push("/")
+  }
+
+  redirectToLogin() {
+    this.props.router.push("/login")
+  }
+
   render() {
+    const {children, viewer, route} = this.props
     return(
-        <Layout viewer={this.props.viewer}>
-          {this.props.children}
-        </Layout>
-      );
+      <Layout viewer={viewer} auth={route.auth} >
+        {children}
+      </Layout>
+    );
   }
 }
+
+export default withRouter(App)
